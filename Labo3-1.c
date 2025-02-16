@@ -1,39 +1,15 @@
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdlib.h>
 #include <stdio.h>
-#include <time.h>
 
-
-int nb_aleatoire(int min, int max)
+double celcius_farenheit(double celcius) {
+    return celcius*1.8+32;
+}
+int main(void)
 {
-    return min + (int)(rand() / (RAND_MAX + 0.001) * (max - min + 1));
+    double t_celcius;
+    double t_farenheit;
+    printf("La temperature en celcius: ");
+    scanf("%lf", &t_celcius);
+    t_farenheit=celcius_farenheit(t_celcius);
+    printf("La temperature en farenheit: %.2lf\n", t_farenheit);
+    return 0;
 }
-
-int main(void) {
-    int compteur=0;
-    int valeur=7;
-    float occurence=0;
-
-    srand((unsigned int)time(NULL));
-    rand();
-
-    while (compteur < 1000000) {
-        if (nb_aleatoire (1 , 6) + nb_aleatoire(1,6)== valeur) {
-            occurence++;
-        }
-        compteur++;
-    }
-    float probabilite= occurence/1000000;
-    printf("La probabilite d'obtenir 7 est de %.4f %\n", probabilite*100);
-
-    system("pause");
-    return EXIT_SUCCESS;
-}
-//I DIDNT DO THIS ONE ITS NOT RIGHT THIS IS JUST COPIED CODE FROM #3 I THINK//
-
-
-
-
-
-
-
