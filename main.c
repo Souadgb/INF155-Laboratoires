@@ -3,14 +3,13 @@
 int main(void)
 {
     int entier;
-    int diviseur=1;
-    printf("Entier positif: \n");
+    printf("Nombre entier: \n");
     scanf("%d", &entier);
-    while(diviseur< entier) {
-        diviseur++;
-        if (entier % diviseur ==0) {
-            printf("%d\n" ,diviseur);
-        }
+    int compteur=0;
+    while(entier>0) {
+        entier/=10;
+        compteur++;
     }
+    printf("Ce nombre contient %d chiffres", compteur);
     return 0;
 }
